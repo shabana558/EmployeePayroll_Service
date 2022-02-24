@@ -25,12 +25,10 @@ select Id,Name from Employee_Payroll where Name='Dhoni'
 select salary from Employee_Payroll where Name='Dhoni';
 select salary from Employee_Payroll where Name='shabana';
 
+---------UC5-Select salary till date------
 select * from Employee_Payroll;
-select Salary,Name from Employee_Payroll where startDate between CAST('2020-01-01' as Date) and getdate();
-
-
-
-	  
-
-
-	  
+select Salary,Name from Employee_Payroll where startDate between CAST('2020-01-01' as Date) and getdate()
+---------UC6-Set Gender---------------
+ALTER TABLE Employee_Payroll ADD Gender char(1);
+update Employee_Payroll set Gender ='M' WHERE Id IN(1,2,3,4);
+update Employee_Payroll set Salary=600000 WHERE Id=5 or Id=3;
