@@ -32,3 +32,10 @@ select Salary,Name from Employee_Payroll where startDate between CAST('2020-01-0
 ALTER TABLE Employee_Payroll ADD Gender char(1);
 update Employee_Payroll set Gender ='M' WHERE Id IN(1,2,3,4);
 update Employee_Payroll set Salary=600000 WHERE Id=5 or Id=3;
+
+----------UC7-Group by Gender--------
+ALTER TABLE Employee_Payroll ADD Gender char(1);
+update Employee_Payroll set Gender ='F' WHERE Id=6;
+select sum(Salary) as TotalSalary,Gender from Employee_Payroll group by Gender;
+select* from Employee_Payroll; 
+select Count(Name)as NumberofEmployees,Gender from Employee_Payroll group by Gender;
