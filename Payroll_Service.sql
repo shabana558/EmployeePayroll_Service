@@ -34,8 +34,23 @@ update Employee_Payroll set Gender ='M' WHERE Id IN(1,2,3,4);
 update Employee_Payroll set Salary=600000 WHERE Id=5 or Id=3;
 
 ----------UC7-Group by Gender--------
-ALTER TABLE Employee_Payroll ADD Gender char(1);
+
+
 update Employee_Payroll set Gender ='F' WHERE Id=6;
 select sum(Salary) as TotalSalary,Gender from Employee_Payroll group by Gender;
 select* from Employee_Payroll; 
 select Count(Name)as NumberofEmployees,Gender from Employee_Payroll group by Gender;
+Alter table empoyee_payroll
+add Gender char(1);
+
+------- UC 6: Add Gender Column and Update Table Values -------
+Alter table Employee_payroll
+add Gender char(1);
+
+Update Employee_payroll 
+set Gender='M'
+where name='shabana';
+Update Employee_Payroll 
+set Gender='M'
+where name='Dhoni' or name='Sachin'or name='shabana';
+
